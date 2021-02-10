@@ -1,4 +1,4 @@
-import Users from '../models/Users';
+import Users from '../models/User';
 
 class UserRepository {
   // READ
@@ -6,6 +6,11 @@ class UserRepository {
     const read = await Users.findByPk(user_id);
 
     return read;
+  }
+  async findUserByEmail(emailBody) {
+    const email = await Users.findOne({ where: { email: emailBody } })
+
+    return email;
   }
 
   // CREATE

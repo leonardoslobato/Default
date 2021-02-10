@@ -7,16 +7,17 @@ class User extends Model {
         id: {
           primaryKey: true,
           type: DataTypes.UUID,
-          defaultValue: DataTypes.UUIDV4
+          defaultValue: DataTypes.UUIDV4,
         },
         name: Sequelize.STRING,
         email: Sequelize.STRING,
-        password: Sequelize.STRING
+        password: Sequelize.STRING,
       },
       {
-        Sequelize,
-      }
+        sequelize,
+      },
     )
+    return this;
   }
 }
 

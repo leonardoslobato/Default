@@ -9,21 +9,22 @@ module.exports = {
           allowNull: false,
           type: Sequelize.UUID,
           defaultValue: Sequelize.UUIDV4,
+          // autoIncrement: true
         },
         name: {
           type: Sequelize.STRING,
-          allowNull: false,
+          // allowNull: false,
         },
         email: {
           type: Sequelize.STRING,
-          allowNull: false,
+          // allowNull: false,
         },
         password: {
           type: Sequelize.STRING,
-          allowNull: false,
+          // allowNull: false,
         },
 
-        //------------
+        //######################################
         created_at: {
           type: Sequelize.DATE,
           allowNull: false,

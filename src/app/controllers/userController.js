@@ -20,9 +20,9 @@ class UserController {
 
   // CREATE USER
   async create(req, res) {
-    const user = await createUserService.execute(req.body);
+    const user = await createUserService.execute({ ...req.Body, });
 
-    return res.json(user);
+    return res.status(200).json(user);
   }
 
   // UPDATE USER
@@ -35,6 +35,7 @@ class UserController {
     return res.status(200).json(user);
   }
 
+  // DELETE USER
   async delete(req, res) {
     const { id } = req;
     const user = await deleteUserService.execute(id);

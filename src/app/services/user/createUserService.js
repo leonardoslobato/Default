@@ -8,17 +8,12 @@ class CreateUserServices {
   }
 
   async execute(userBody) {
-    const { user_id } = userBody;
+    // const userExists = await this.userRepository.findUserByEmail(userBody.email);
 
-    // Verifica se esse usuário existe
-    const userExists = await this.userRepository.findUserById(user_id);
-
-    if (userExists) {
-      throw new AppError('User alteady exists', 404);
-    }
-
-    // criação do usuário
-    const createUser = await this.userRepository.createUser(user_id);
+    // if (userExists) {
+    //   throw new AppError('Email alteady exists', 404);
+    // }
+    const createUser = await this.userRepository.createUser(userBody);
 
     return createUser;
   }
